@@ -1,12 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import { Button } from "@mui/material";
-import logo from "../../img/logo.png"
-import Link from '@mui/material/Link';
+import { Button, Link } from "@mui/material";
 import GitHubIcon from '@mui/icons-material/GitHub';
-import TelegramIcon from '@mui/icons-material/Telegram';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
-
+import TelegramIcon from '@mui/icons-material/Telegram';
+import logo from "../../img/logo.png"
 
 const StyledFooter = styled.footer`
     background-color: #121212;
@@ -24,7 +22,8 @@ const StyledFooter = styled.footer`
 const ContenedorBotones = styled.div`
     display: flex;
     justify-content: center;
-    padding-top: 5px;
+    margin-top: 6px;
+    gap: 13px;
 `;
 
 const Logo = styled.img`
@@ -53,13 +52,13 @@ const Footer = () => {
             <Disclaimer>
                 <Link underline="none" href="https://www.jjrh92.dev" target="_blank" rel="noopener noreferrer">Copyright © 2023 - jjrh92.dev</Link>
                 <ContenedorBotones>
-                    <Button variant="text" title="Contactame por LinkedIn" href="https://www.linkedin.com/in/jjrh92/" target="_blank" rel="noopener noreferrer">
+                    <Button variant="text" title="Contáctame por LinkedIn" href="https://www.linkedin.com/in/jjrh92/" target="_blank" rel="noopener noreferrer">
                         <LinkedInIcon/>
                     </Button>
-                    <Button variant="text" title="Sigueme en Github" href="https://www.github.com/jjrh92" target="_blank" rel="noopener noreferrer">
+                    <Button variant="text" title="Sígueme en Github" href="https://www.github.com/jjrh92" target="_blank" rel="noopener noreferrer">
                         <GitHubIcon/>
                     </Button>
-                    <Button variant="text" title="Contactame por Telegram" href="https://t.me/jjrh92" target="_blank" rel="noopener noreferrer">
+                    <Button variant="text" title="Contáctame por Telegram" href="https://t.me/jjrh92" target="_blank" rel="noopener noreferrer">
                         <TelegramIcon/>
                     </Button>
                 </ContenedorBotones>
