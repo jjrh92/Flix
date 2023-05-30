@@ -1,15 +1,32 @@
-import Logo from "../../img/logo.png"
-import "../Header/Header.css"
+import React from "react";
+import styled from "styled-components";
+import logo from "../../img/logo.png"
+import { Button } from "@mui/material";
+
+const StyledHeader = styled.header`
+    background-color: #121212;
+    padding-top: 27px;
+    padding-right: 40px;
+    padding-bottom: 27px;
+    padding-left: 40px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #DC1A28;
+`;
+
+const Logo = styled.img`
+    width: 150px;
+    height: 40px;
+`;
 
 const Header = () => {
 
     return (
 
-        <div className="Header">
-            <a href="index.html" rel="noopener noreferrer" title="Haz click en el logo para recargar la pagina.">
-            <img src={Logo} alt="Logo JulioFlix " />
-            </a>
-        </div>
+        <StyledHeader>
+            <a href="./index.html" title="Haz click en este logo para refrescar la pagina"><Logo src={logo} alt="Logo JulioFlix"/></a>
+            <Button variant="outlined" href="./index.html" size="medium" color="error">Nuevo Video</Button>
+        </StyledHeader>
 
     );
 
