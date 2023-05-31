@@ -1,7 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import logo from "../../img/logo.png"
-import { Button, Link } from "@mui/material";
+import { Link } from "@mui/material";
+import Boton from "../Boton/Boton";
 
 const StyledHeader = styled.header`
     background-color: #121212;
@@ -25,7 +26,7 @@ const Header = () => {
 
         <StyledHeader>
             <Link href="./index.html" title="Haz click en este logo para refrescar la pagina"><Logo src={logo} alt="Logo JulioFlix"/></Link>
-            <Button variant="outlined" href="" size="medium" color="error">Nuevo Video</Button>
+            <Boton link={"https://www.jjrh92.dev"} texto={"Nuevo Video"}/>
         </StyledHeader>
 
     );
