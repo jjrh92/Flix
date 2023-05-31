@@ -46,7 +46,6 @@ const Disclaimer = styled.span`
 const Footer = () => {
 
     return (
-
         <StyledFooter>
             <a href="./index.html" title="Haz click en este logo para refrescar la pagina"><Logo src={logo} alt="Logo JulioFlix"/></a>
             <Disclaimer>
@@ -64,7 +63,6 @@ const Footer = () => {
                 </ContenedorBotones>
             </Disclaimer>
         </StyledFooter>
-
     );
 
 };

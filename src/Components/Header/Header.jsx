@@ -20,13 +20,19 @@ const Logo = styled.img`
     height: 40px;
 `;
 
+const SubirNuevoVideo = () => {
+
+    alert ("Subir Video Nuevo");
+
+}
+
 const Header = () => {
 
     return (
 
         <StyledHeader>
             <Link href="./index.html" title="Haz click en este logo para refrescar la pagina"><Logo src={logo} alt="Logo JulioFlix"/></Link>
-            <Boton link={"https://www.jjrh92.dev"} texto={"Nuevo Video"}/>
+            <Boton texto={"Nuevo Video"} funcion={SubirNuevoVideo}/>
         </StyledHeader>
 
     );
