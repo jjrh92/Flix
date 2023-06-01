@@ -1,11 +1,11 @@
 import React from "react";
 import { Button } from "@mui/material";
 
-const Boton = ({funcion, texto}) => {
+const Boton = ({ejecutar, texto}) => {
 
     return (
 
-        <Button variant="outlined" onClick={funcion} size="medium" color="error">{texto}</Button>
+        <Button variant="outlined" onClick={ejecutar} size="medium" color="error">{texto}</Button>
 
     )
 

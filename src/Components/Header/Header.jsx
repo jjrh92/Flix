@@ -32,7 +32,7 @@ const Header = () => {
 
         <StyledHeader>
             <Link href="./index.html" title="Haz click en este logo para refrescar la pagina"><Logo src={logo} alt="Logo JulioFlix"/></Link>
-            <Boton texto={"Nuevo Video"} funcion={SubirNuevoVideo}/>
+            <Boton texto={"Nuevo Video"} ejecutar={SubirNuevoVideo}/>
         </StyledHeader>
 
     );
