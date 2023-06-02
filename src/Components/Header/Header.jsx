@@ -1,24 +1,30 @@
 import React from "react";
-import styled from "styled-components";
+import { styled } from '@mui/system';
 import logo from "../../img/logo.png"
 import { Link } from "@mui/material";
 import Boton from "../Boton/Boton";
+import { ColoresJulioFlix } from "../../global";
 
-const StyledHeader = styled.header`
-    background-color: #121212;
-    padding-top: 27px;
-    padding-right: 40px;
-    padding-bottom: 27px;
-    padding-left: 40px;
-    display: flex;
-    justify-content: space-between;
-    border-bottom: 1px solid #DC1A28;
-`;
+const ContenedorHeader= styled ("header") ({
 
-const Logo = styled.img`
-    width: 150px;
-    height: 40px;
-`;
+    backgroundColor: ColoresJulioFlix.fondo,
+    paddingTop: "27px",
+    paddingRight: "40px",
+    paddingBottom: "27px",
+    paddingLeft: "40px",
+    display: "flex",
+    justifyContent: "space-between",
+    borderBottom: "1px solid #DC1A28",
+
+});
+
+const Logo= styled ("img") ({
+
+    height: "40px",
+    width: "150px",
+
+});
+
 
 const SubirNuevoVideo = () => {
 
@@ -30,10 +36,10 @@ const Header = () => {
 
     return (
 
-        <StyledHeader>
+        <ContenedorHeader>
             <Link href="./index.html" title="Haz click en este logo para refrescar la pagina"><Logo src={logo} alt="Logo JulioFlix"/></Link>
             <Boton texto={"Nuevo Video"} ejecutar={SubirNuevoVideo}/>
-        </StyledHeader>
+        </ContenedorHeader>
 
     );
 

@@ -1,33 +1,29 @@
 import React from "react";
-import styled from "styled-components";
+import { styled } from '@mui/system';
 import banner from "../../img/banner.png"
+import { ColoresJulioFlix } from "../../global";
 
-const ImagenBanner = styled.img`
+const ContenedorBanner = styled ("div") ({
 
-    max-width: 100%;
-
-`;
-
-const ContenedorBanner = styled.section`
-
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #121212;
-
-`;
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    backgroundImage: `url(${banner})`,
+    backgroundColor: ColoresJulioFlix.fondo,
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
+    backgroundSize: "cover",
+    height: "100vh",
+    maxWidth: "100%",
+});
 
 const Banner = () => {
 
     return (
 
+        <ContenedorBanner>
 
-         <ContenedorBanner>
-            <ImagenBanner src={banner} alt="Imagen de banner"/>
-         </ContenedorBanner>
-
-
+        </ContenedorBanner>
 
     );
 

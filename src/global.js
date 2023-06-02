@@ -1,6 +1,6 @@
-export const MisColores = {
+export const ColoresJulioFlix = {
 
-    textoJulioFlix: "#DC1A28",
-    fondoJulioFlix: "#121212",
+    textos: "#DC1A28",
+    fondo: "#121212",
 
 }
