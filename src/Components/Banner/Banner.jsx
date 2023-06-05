@@ -1,20 +1,75 @@
 import React from "react";
 import { styled } from '@mui/system';
-import banner from "../../img/banner.png"
 import { ColoresJulioFlix } from "../../global";
+import banner from "../../img/banner.png"
+import Video from "../VideoCard/VideoCard";
 
-const ContenedorBanner = styled ("div") ({
+const ContenedorBanner = styled ("section") ({
 
     display: "flex",
     flexDirection: "column",
-    alignItems: "center",
+    alignItems: "space-between",
     backgroundImage: `url(${banner})`,
     backgroundColor: ColoresJulioFlix.fondo,
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
     height: "100vh",
+    
+
+});
+
+const H1Hero = styled ("h1") ({
+
+    color: ColoresJulioFlix.textos,
+    fontFamily: "Roboto",
+    fontSize: "46px",
+    lineHeight: "54px",
+    fontWeight: "400",
+
+});
+
+const TextoHero = styled ("p") ({
+
+    color: ColoresJulioFlix.textos,
+    fontFamily: "Roboto",
+    fontSize: "18px",
+    lineHeight: "21px",
+    maxWidth: "600px",
+    fontWeight: "500",
+
+});
+
+const ContenedorVideoHeader = styled ("div") ({
+
+    display: "flex",
+    flexDirection: "column",
+    height: "100vh",
     maxWidth: "100%",
+    justifyContent: "flex-end",
+
+});
+
+const ContenedorTextos = styled ("div") ({
+
+    display: "flex",
+    flexDirection: "column",
+    height: "100vh",
+    justifyContent: "end",
+    textAlign: "start",
+
+});
+
+const Hero = styled ("div") ({
+
+    display: "flex",
+    flexDirection: "row",
+    paddingLeft: "40px",
+    paddingRight: "40px",
+    marginTop: "-20px",
+    justifyContent: "space-between",
+    userSelect: "none",
+
 });
 
 const Banner = () => {
@@ -22,6 +77,19 @@ const Banner = () => {
     return (
 
         <ContenedorBanner>
+            
+            <Hero>
+
+                <ContenedorTextos>
+                    <H1Hero>Challenge React</H1Hero>
+                    <TextoHero>Este challenge es una forma de aprendizaje. Es un mecanismo donde podrás comprometerte en la resolución de un problema para poder aplicar todos los conocimientos adquiridos en la formación de React.</TextoHero>
+                </ContenedorTextos>
+    
+                <ContenedorVideoHeader>
+                    <Video titulo={"Pensar como programador"} id={"ov7vA5HFe6w"} />
+                </ContenedorVideoHeader>
+
+            </Hero>
 
         </ContenedorBanner>
 

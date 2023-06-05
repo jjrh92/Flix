@@ -1,8 +1,8 @@
 import React from "react";
-import { styled } from '@mui/system';
 import logo from "../../img/logo.png"
-import { Link } from "@mui/material";
 import Boton from "../Boton/Boton";
+import { Link } from "@mui/material";
+import { styled } from '@mui/system';
 import { ColoresJulioFlix } from "../../global";
 
 const ContenedorHeader= styled ("header") ({
@@ -14,7 +14,8 @@ const ContenedorHeader= styled ("header") ({
     paddingLeft: "40px",
     display: "flex",
     justifyContent: "space-between",
-    borderBottom: "1px solid #DC1A28",
+    borderBottom: "1px solid",
+    borderColor: ColoresJulioFlix.textos,
 
 });
 

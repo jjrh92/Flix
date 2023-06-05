@@ -11,7 +11,7 @@ const ContenedorFooter = styled ("footer") ({
 
     paddingTop: "27px",
     paddingRight: "40px",
-    paddingBottom: "27px",
+    paddingBottom: "20px",
     paddingLeft: "40px",
     display: "flex",
     flexDirection: "column",
@@ -19,6 +19,7 @@ const ContenedorFooter = styled ("footer") ({
     justifyContent: "center",
     borderTop: "1px solid #DC1A28",
     backgroundColor: ColoresJulioFlix.fondo,
+    userSelect: "none",
 
 });
 
@@ -40,7 +41,6 @@ const Logo = styled ("img") ({
 
 const Disclaimer = styled ("span") ({
 
-    color: "#DC1A28",
     fontFamily: "Roboto",
     fontWeight: "bold",
 
