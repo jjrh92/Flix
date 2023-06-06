@@ -1,7 +1,9 @@
 import Header from '../../Components/Header/Header';
 import Footer from '../../Components/Footer/Footer';
-import "../../reset.css";
 import Banner from '../../Components/Banner/Banner';
+import Carousel from '../Carousel/Carousel/Carousel';
+
+import "../../reset.css";
 
 function DefaultPage() {
   return (
@@ -9,6 +11,7 @@ function DefaultPage() {
 
       <Header />
       <Banner />
+      <Carousel />
       <Footer />
 
     </div>

@@ -2,7 +2,7 @@ import React from "react";
 import { styled } from '@mui/system';
 import { ColoresJulioFlix } from "../../global";
 import banner from "../../img/banner.png"
-import Video from "../VideoCard/VideoCard";
+import Video from "../Carousel/VideoCard/VideoCard";
 
 const ContenedorBanner = styled ("section") ({
 

@@ -1,6 +1,6 @@
 import React from "react";
 import { styled } from '@mui/system';
-import { ColoresJulioFlix } from "../../global";
+import { ColoresJulioFlix } from "../../../global";
 
 const Contenedor = styled ("div") ({
 
