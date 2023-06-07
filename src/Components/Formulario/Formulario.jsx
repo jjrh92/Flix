@@ -2,10 +2,9 @@ import React from "react";
 import { ColoresJulioFlix } from "../../global";
 import { styled } from '@mui/system';
 import FormControl from '@mui/material/FormControl';
-import TextField from '@mui/material/TextField';
 import Boton from "../Boton/Boton";
-import Select from '@mui/material/Select';
-import MenuItem from '@mui/material/MenuItem';
+import CampoTexto from "../CampoTexto/CampoTexto";
+import ListaCategorias from "../ListaCategorias/ListaCategorias";
 
 const ContenedorFormulario = styled ("section") ({
 
@@ -28,15 +27,17 @@ const H1Formulario = styled ("h1") ({
     
 });
 
-const Formulario = () => {
 
+const Formulario = () => {
+    
     return (
 
         <ContenedorFormulario>
-            <FormControl sx={{width: "90%", boxShadow: "5px 5px 15px #DC1A28", borderRadius:"20px", display:"flex", flexDirection:"column", alignItems: "center", paddingBottom: "30px", gap: "30px",}}>
+            <FormControl sx={{width: "90%", boxShadow: "1px 1px 15px 5px #DC1A28", borderRadius:"20px", display:"flex", flexDirection:"column", alignItems: "center", paddingBottom: "30px", gap: "30px",}}>
                 <H1Formulario>Nuevo Video</H1Formulario>
-                <TextField variant="filled" id="tituloVideo" label="Nombre del Video" placeholder="Ingrese nombre del Video" color="success"sx={{backgroundColor: "whitesmoke", width: "335px", borderRadius: "10px",}}/>
-                <TextField variant="filled" id="idVideo" label="ID Video (Formato Youtube)" placeholder="Ejemplo: jfKfPfyJRdk" color="success"sx={{backgroundColor: "whitesmoke", width: "335px", borderRadius: "10px",}}/>
+                <CampoTexto id={"tituloVideo"} label={"Nombre del Video"} placeholder={"Ingrese nombre del Video"}/>
+                <CampoTexto id={"idVideo"} label={"Id del Video (formato Youtube"} placeholder={"Ejemplo: 'jfKfPfyJRdk"}/>
+                <ListaCategorias />
                 <Boton texto={"Agregar Video"}/>
             </FormControl>
         </ContenedorFormulario>
