@@ -1,28 +1,7 @@
 import React from "react";
 import styled from "@emotion/styled";
-import MenuItem from '@mui/material/MenuItem';
-import TextField from "@mui/material";
-import { Select } from "@mui/material";
+import { Select, InputLabel, FormControl, MenuItem } from "@mui/material";
 import { ColoresJulioFlix } from "../../global";
-
-const Categorias = [
-    {
-      value: 'Front-End',
-      label: 'Front-End',
-    },
-    {
-      value: 'Back-End',
-      label: 'Back-End',
-    },
-    {
-      value: 'Innovación & Gestión',
-      label: '',
-    },
-    {
-      value: 'JPY',
-      label: '¥',
-    },
-  ];
 
 const ContenedorOpciones = styled ("div") ({
 
@@ -34,16 +13,36 @@ const ContenedorOpciones = styled ("div") ({
     
 });
 
-const ListaCategorias = () => {
+let categorias = [
 
-    return <ContenedorOpciones>
-        <Select color="error" sx={{width: "335px", backgroundColor: "whitesmoke", borderRadius:"10px 10px 0px 0px",}}>
-            <MenuItem>Front-End</MenuItem>
-            <MenuItem>Back-End</MenuItem>
-            <MenuItem>Innovación & Gestión</MenuItem>
-            <MenuItem selected>Custom</MenuItem>
+  "Front-End",
+  "Back-End",
+  "Innovación & Gestión",
+  "Custom",
+  
+];
+
+export default function ListaCategorias() {
+  const [categoria, setCategoria] = React.useState("");
+
+  const manejarCambio = (event) => {
+    setCategoria(event.target.value);
+  };
+
+  return (
+    <div>
+      <FormControl color="error" variant="filled" sx={{ backgroundColor:"whitesmoke", width:"335px", borderRadius:"10px 10px 0px 0px",}}>
+        <InputLabel id="demo-simple-select-filled-label">Seleccionar Categoria del Video</InputLabel>
+        <Select labelId="demo-simple-select-filled-label" id="demo-simple-select-filled" value={categoria} onChange={manejarCambio}>
+
+          {categorias.map((categoria, indice) => {
+
+            return <MenuItem key={indice} value={categoria}>{categoria}</MenuItem>
+
+          })}
+          
         </Select>
-    </ContenedorOpciones>
+      </FormControl>
+    </div>
+  );
 }
-
-export default ListaCategorias
