@@ -1,9 +1,11 @@
+import { useState } from "react";
 import React from "react";
 import logo from "../../img/logo.png"
 import Boton from "../Boton/Boton";
 import { Link } from "@mui/material";
 import { styled } from '@mui/system';
 import { ColoresJulioFlix } from "../../global";
+
 
 const ContenedorHeader= styled ("header") ({
 
@@ -26,20 +28,22 @@ const Logo= styled ("img") ({
 
 });
 
+const Header = (props) => {
 
-const SubirNuevoVideo = () => {
+    // const [mostrar, actualizarMostrar] = useState (true);
 
-    alert ("Subir Video Nuevo");
+    // const manejarClick = () => {
 
-}
+    //     console.log ("Mostrar/Ocultar elemento", !mostrar)
+    //     actualizarMostrar(!mostrar);
 
-const Header = () => {
+    // };
 
     return (
 
         <ContenedorHeader>
             <Link href="./index.html" title="Haz click en este logo para refrescar la pagina"><Logo src={logo} alt="Logo JulioFlix"/></Link>
-            <Boton texto={"Nuevo Video"} ejecutar={SubirNuevoVideo}/>
+            <Boton title="Agregar nuevo video" texto={"Nuevo Video"} ejecutar={props.cambiarMostrar}/>
         </ContenedorHeader>
 
     );

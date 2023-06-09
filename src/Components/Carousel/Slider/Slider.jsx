@@ -2,7 +2,6 @@ import React from "react";
 import { styled } from '@mui/system';
 import { ColoresJulioFlix } from "../../../global";
 import "../../../data/datos-iniciales.json"
-import datos from "../../../data/data.jsx";
 import Video from "../VideoCard/VideoCard";
 
 
@@ -28,11 +27,6 @@ const ContenedorCategoria = styled ("div") ({
     
 });
 
-const cargarVideos = () => {
-
-    
-
-} 
 
 const SliderJulioFlix = () => {
 
@@ -40,9 +34,6 @@ const SliderJulioFlix = () => {
 
         <ContenedorSlider>
             <ContenedorCategoria>
-            <Video titulo={"1"} id={""} />
-            <Video titulo={"1"} id={""} />
-            <Video titulo={"1"} id={""} />
             <Video titulo={"1"} id={""} />
             </ContenedorCategoria>
         </ContenedorSlider>
