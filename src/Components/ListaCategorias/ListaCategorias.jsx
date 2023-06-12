@@ -10,21 +10,24 @@ let categorias = [
   
 ];
 
-export default function ListaCategorias() {
+export default function ListaCategorias (props) {
 
   const [categoria, setCategoria] = React.useState("");
 
   const manejarCambio = (evento) => {
 
-    setCategoria(evento.target.value);
+    setCategoria (evento.target.value);
+    props.actualizarCategoria (evento.target.value);
 
   };
-
+  
   return (
 
     <FormControl color="error" variant="filled" sx={{ backgroundColor:"whitesmoke", width:"335px", borderRadius:"10px 10px 0px 0px",}}>
-      <InputLabel id="demo-simple-select-filled-label">Seleccionar Categoria del Video</InputLabel>
-      <Select required labelId="demo-simple-select-filled-label" id="demo-simple-select-filled" value={categoria} onChange={manejarCambio}>
+
+      {/* value={categoria} */}
+      <InputLabel id="etiquetaDelSelect">Seleccionar Categoria para el Video</InputLabel>
+      <Select onChange={manejarCambio} value={props.valor} required labelId="etiquetaDelSelect">
 
       {categorias.map((categoria, indice,) => {
 

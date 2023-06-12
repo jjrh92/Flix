@@ -1,3 +1,4 @@
+import { useState } from "react";
 import React from "react";
 import { ColoresJulioFlix } from "../../global";
 import { styled } from '@mui/system';
@@ -11,7 +12,7 @@ const ContenedorFormulario = styled ("section") ({
     justifyContent: "center",
     padding: "80px 0px",
     backgroundColor: ColoresJulioFlix.fondo,
-    gap: "50px"
+    gap: "50px",
     
 });
 
@@ -57,24 +58,36 @@ const Form = styled ("form") ({
 
 const Formulario = () => {
 
+    const [nombre, actualizarNombre] = useState("");
+    const [id, actualizarID] = useState("");
+    const [categoria, actualizarCategoria] = useState("");
+
     const manejarEnvio = (evento) => {
 
         evento.preventDefault ();
-        console.log ("manejar el envio", evento);
+
+        let datosAEnviar = {
+
+            nombre: nombre,
+            id: id,
+            categoria: categoria,
+
+        }
+
+        console.log ("Se han enviado los siguientes datos ",datosAEnviar)
 
     }
     
     return (
 
         <ContenedorFormulario>
-            <Form id="formularioVideo" onSubmit={manejarEnvio}>
+            <Form autoComplete="off" id="formularioVideo" onSubmit={manejarEnvio}>
                 <H1Formulario>Nuevo Video</H1Formulario>
-                <CampoTexto id={"tituloVideo"} label={"Nombre del Video"} placeholder={"Ingrese nombre del Video"}/>
-                <CampoTexto id={"idVideo"} label={"Id del Video (formato Youtube"} placeholder={"Ejemplo: jfKfPfyJRdk"}/>
-                <ListaCategorias />
+                <CampoTexto valor={nombre} actualizarValor={actualizarNombre} id={"tituloVideo"} label={"Nombre del Video"} placeholder={"Ingrese nombre del Video"}/>
+                <CampoTexto valor={id} actualizarValor={actualizarID} id={"idVideo"} label={"Id del Video (formato Youtube"} placeholder={"Ejemplo: jfKfPfyJRdk"}/>
+                <ListaCategorias valor={categoria} actualizarCategoria={actualizarCategoria}/>
                 <ContenedorBotones>
                     <Boton tipo="submit" title="Agregar un nuevo video al homepage" texto={"Agregar Video"}/>
-                    <Boton title="Volver al Homepage" texto={"Volver al Inicio"}/>
                 </ContenedorBotones>
             </Form>
         </ContenedorFormulario>
