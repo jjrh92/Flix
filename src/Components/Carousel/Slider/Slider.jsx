@@ -4,6 +4,9 @@ import { ColoresJulioFlix } from "../../../global";
 import "../../../data/datos-iniciales.json"
 import Video from "../VideoCard/VideoCard";
 
+// Aca importaremos el Swiper que nos ayudara con el efecto del slider para videos
+
+
 
 const ContenedorSlider = styled ("section") ({
 
@@ -19,14 +22,15 @@ const ContenedorSlider = styled ("section") ({
 const ContenedorCategoria = styled ("div") ({
 
     display: "flex",
-    flexDirection: "row",
+    flexDirection: "column",
     flexWrap: "wrap",
     paddingLeft: "40px",
     paddingRight: "40px",
     backgroundColor: ColoresJulioFlix.fondo,
+    justifyContent: "center",
+    alignItems: "center",
     
 });
-
 
 const SliderJulioFlix = () => {
 
@@ -34,7 +38,8 @@ const SliderJulioFlix = () => {
 
         <ContenedorSlider>
             <ContenedorCategoria>
-            <Video titulo={"1"} id={""} />
+
+
             </ContenedorCategoria>
         </ContenedorSlider>
 
