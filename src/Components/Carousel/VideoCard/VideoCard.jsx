@@ -15,7 +15,7 @@ const Video = ({titulo, id,}) => {
     return (
 
         <Contenedor>
-            <iframe width={"340"} height={"190"} src={`https://www.youtube.com/embed/${id}`} title={titulo}/>
+            <iframe width={"340"} height={"190"} src={`https://www.youtube.com/embed/${id}`} title={titulo} allowFullScreen/>
         </Contenedor>
         
 
