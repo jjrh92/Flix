@@ -13,9 +13,10 @@ const ContenedorBanner = styled ("section") ({
     backgroundColor: ColoresJulioFlix.fondo,
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
-    backgroundSize: "cover",
+    backgroundSize: "auto",
     height: "100vh",
-    
+    borderBottom: "1px solid",
+    borderColor: ColoresJulioFlix.textos,
 
 });
 
@@ -37,6 +38,7 @@ const TextoHero = styled ("p") ({
     lineHeight: "21px",
     maxWidth: "600px",
     fontWeight: "500",
+    paddingTop: "10px",
 
 });
 
@@ -86,7 +88,7 @@ const Banner = () => {
                 </ContenedorTextos>
     
                 <ContenedorVideoHeader>
-                    <Video titulo={"Pensar como programador"} id={"ov7vA5HFe6w"} />
+                    <Video ancho={"360"} alto={"200"} titulo={"Pensar como programador"} id={"ov7vA5HFe6w"} />
                 </ContenedorVideoHeader>
 
             </Hero>

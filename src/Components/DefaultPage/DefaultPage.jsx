@@ -16,6 +16,16 @@ function DefaultPage() {
 
   }
 
+  // Lista de Categorias
+
+  let categorias = [
+
+    "Front-End",
+    "Back-End",
+    "Innovación & Gestión",
+    "Custom",
+    
+  ];
 
   return (
 

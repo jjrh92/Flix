@@ -10,12 +10,12 @@ const Contenedor = styled ("div") ({
 
 }); 
 
-const Video = ({titulo, id}) => {
+const Video = ({titulo, id,}) => {
 
     return (
 
         <Contenedor>
-            <iframe width="360" height="200" src={`https://www.youtube.com/embed/${id}`} title={titulo}/>
+            <iframe width={"340"} height={"190"} src={`https://www.youtube.com/embed/${id}`} title={titulo}/>
         </Contenedor>
         
 
