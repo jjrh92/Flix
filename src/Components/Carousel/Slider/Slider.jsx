@@ -20,7 +20,7 @@ const SliderJulioFlix = () => {
     const [datosFrontEnd, setDatosFrontEnd] = useState([])
     useEffect( () => {
 
-        fetch ("http://localhost:3001/FrontEnd")
+        fetch ("https://json-julioflix.onrender.com/FrontEnd")
             .then (response => response.json())
             .then (data => setDatosFrontEnd(data))
             .catch (err => console.log (err))
@@ -30,7 +30,7 @@ const SliderJulioFlix = () => {
     const [datosBackEnd, setDatosBackEnd] = useState([])
     useEffect( () => {
 
-        fetch ("http://localhost:3001/BackEnd")
+        fetch ("https://json-julioflix.onrender.com/BackEnd")
             .then (response => response.json())
             .then (data => setDatosBackEnd(data))
             .catch (err => console.log (err))
@@ -40,7 +40,7 @@ const SliderJulioFlix = () => {
     const [datosGestion, setDatosGestion] = useState([])
     useEffect( () => {
 
-        fetch ("http://localhost:3001/Gestion")
+        fetch ("https://json-julioflix.onrender.com/Gestion")
             .then (response => response.json())
             .then (data => setDatosGestion(data))
             .catch (err => console.log (err))
@@ -50,7 +50,7 @@ const SliderJulioFlix = () => {
     const [datosCustom, setDatosCustom] = useState([])
     useEffect( () => {
 
-        fetch ("http://localhost:3001/Custom")
+        fetch ("https://json-julioflix.onrender.com/Custom")
             .then (response => response.json())
             .then (data => setDatosCustom(data))
             .catch (err => alert ("No se ha podido cargar el JSON. Contacte al Admin.", err))
