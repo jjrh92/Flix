@@ -14,7 +14,6 @@ const ContenedorSlider = styled ("section") ({
     
 });
 
-
 const SliderJulioFlix = () => {
 
     const [datosFrontEnd, setDatosFrontEnd] = useState([])

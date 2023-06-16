@@ -8,14 +8,21 @@ const Contenedor = styled ("div") ({
     borderColor: ColoresJulioFlix.textos,
     display: "flex",
 
-}); 
+});
+
+const Iframe = styled ("iframe") ({
+
+    width: "340px",
+    height: "190px",
+
+});
 
 const Video = ({titulo, id,}) => {
 
     return (
 
         <Contenedor>
-            <iframe width={"340"} height={"190"} src={`https://www.youtube.com/embed/${id}`} title={titulo} allowFullScreen/>
+            <Iframe src={`https://www.youtube.com/embed/${id}`} title={titulo} allowFullScreen/>
         </Contenedor>
         
 

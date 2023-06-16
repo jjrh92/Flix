@@ -70,7 +70,7 @@ const SliderInterno = (props) => {
         <ContenedorCategoria>
             <ContenedorTextosCategoria>
                 <H1Categoria style={{color: `${props.ColorTitulo}`}}>{props.TextoTitulo}</H1Categoria>
-                <SubTexto key={Math.random}>{props.TextoSubtitulo}</SubTexto>
+                <SubTexto key={uuid()}>{props.TextoSubtitulo}</SubTexto>
             </ContenedorTextosCategoria>
             <ContenedorVideos>
                 <Video key={uuid()} titulo={props.Video1Titulo} id={props.Video01ID} />

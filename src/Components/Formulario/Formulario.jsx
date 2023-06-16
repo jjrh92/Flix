@@ -10,6 +10,8 @@ const ContenedorFormulario = styled ("section") ({
 
     display: "flex",
     justifyContent: "center",
+    flexDirection: "column",
+    alignItems: "center",
     padding: "80px 0px",
     backgroundColor: ColoresJulioFlix.fondo,
     gap: "50px",
@@ -54,6 +56,18 @@ const Form = styled ("form") ({
     
 });
 
+const ContenedorGenerico = styled ("div") ({
+
+    width: "90%",
+    boxShadow: "1px 1px 15px 5px #DC1A28",
+    borderRadius: "20px",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    paddingBottom: "30px",
+    gap: "30px",
+    
+});
 
 
 const Formulario = () => {
@@ -90,6 +104,11 @@ const Formulario = () => {
                     <Boton tipo="submit" title="Agregar un nuevo video al homepage" texto={"Agregar Video"}/>
                 </ContenedorBotones>
             </Form>
+            <ContenedorGenerico>
+                <H1Formulario>Listado de Videos</H1Formulario>
+
+
+            </ContenedorGenerico>
         </ContenedorFormulario>
 
     );
