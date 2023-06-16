@@ -3,6 +3,7 @@ import { styled } from '@mui/system';
 import { ColoresJulioFlix } from "../../../../global";
 import Video from "../../VideoCard/VideoCard";
 import "../Slider.css";
+import uuid from "react-uuid";
 
 const ContenedorCategoria = styled ("div") ({
 
@@ -62,20 +63,20 @@ const ContenedorVideos = styled ("div") ({
 });
 
 
-const SliderFrontEnd = (props) => {
+const SliderInterno = (props) => {
 
     return (
 
         <ContenedorCategoria>
             <ContenedorTextosCategoria>
                 <H1Categoria style={{color: `${props.ColorTitulo}`}}>{props.TextoTitulo}</H1Categoria>
-                <SubTexto>{props.TextoSubtitulo}</SubTexto>
+                <SubTexto key={Math.random}>{props.TextoSubtitulo}</SubTexto>
             </ContenedorTextosCategoria>
             <ContenedorVideos>
-                <Video titulo={props.Video1Titulo} id={props.Video1ID} />
-                <Video titulo={props.Video2Titulo} id={props.Video2ID} />
-                <Video titulo={props.Video3Titulo} id={props.Video3ID} />
-                <Video titulo={props.Video4Titulo} id={props.Video4ID} />
+                <Video key={uuid()} titulo={props.Video1Titulo} id={props.Video01ID} />
+                <Video key={uuid()} titulo={props.Video2Titulo} id={props.Video02ID} />
+                <Video key={uuid()} titulo={props.Video3Titulo} id={props.Video03ID} />
+                <Video key={uuid()} titulo={props.Video4Titulo} id={props.Video04ID} />
             </ContenedorVideos>
         </ContenedorCategoria> 
 
@@ -83,4 +84,4 @@ const SliderFrontEnd = (props) => {
 
 };
 
-export default SliderFrontEnd;
+export default SliderInterno;

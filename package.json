@@ -15,6 +15,7 @@
     "react-dom": "^18.2.0",
     "react-scripts": "^5.0.1",
     "react-slick": "^0.29.0",
+    "react-uuid": "^2.0.0",
     "slick-carousel": "^1.8.1",
     "styled-components": "^5.3.11",
     "swiper": "^9.4.0",
@@ -24,7 +25,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "fake-api": "json-server --watch src/data/db.json --port 3001"
   },
   "eslintConfig": {
     "extends": [

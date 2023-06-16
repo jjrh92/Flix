@@ -1,11 +1,8 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { styled } from '@mui/system';
-import SliderInterno from "./Interno/SliderInterno";
 import { ColoresJulioFlix } from "../../../global";
-import datosFrontEnd from "../../../data/FrontEnd";
-import datosBackEnd from "../../../data/BackEnd";
-import datosGestion from "../../../data/Gestion";
-import datosCustom from "../../../data/Custom";
+import SliderInterno from "./Interno/SliderInterno";
+import uuid from "react-uuid";
 
 const ContenedorSlider = styled ("section") ({
 
@@ -17,93 +14,129 @@ const ContenedorSlider = styled ("section") ({
     
 });
 
+
 const SliderJulioFlix = () => {
+
+    const [datosFrontEnd, setDatosFrontEnd] = useState([])
+    useEffect( () => {
+
+        fetch ("http://localhost:3001/FrontEnd")
+            .then (response => response.json())
+            .then (data => setDatosFrontEnd(data))
+            .catch (err => console.log (err))
+
+    }, []);
+
+    const [datosBackEnd, setDatosBackEnd] = useState([])
+    useEffect( () => {
+
+        fetch ("http://localhost:3001/BackEnd")
+            .then (response => response.json())
+            .then (data => setDatosBackEnd(data))
+            .catch (err => console.log (err))
+
+    }, []);
+
+    const [datosGestion, setDatosGestion] = useState([])
+    useEffect( () => {
+
+        fetch ("http://localhost:3001/Gestion")
+            .then (response => response.json())
+            .then (data => setDatosGestion(data))
+            .catch (err => console.log (err))
+
+    }, []);
+
+    const [datosCustom, setDatosCustom] = useState([])
+    useEffect( () => {
+
+        fetch ("http://localhost:3001/Custom")
+            .then (response => response.json())
+            .then (data => setDatosCustom(data))
+            .catch (err => alert ("No se ha podido cargar el JSON. Contacte al Admin.", err))
+
+    }, []);
 
     return (
 
+        
         <ContenedorSlider>
-            {
-                datosFrontEnd.map ((props) => {
+
+            {datosFrontEnd.map ((props) => {
 
                 return <SliderInterno 
-                        ColorTitulo={props.color} 
-                        TextoTitulo={props.categoria} 
-                        TextoSubtitulo={props.texto} 
-                        Video1Titulo={props.video01.titulo} 
-                        Video1ID={props.video01.id} 
-                        Video2Titulo={props.video02.titulo} 
-                        Video2ID={props.video02.id} 
-                        Video3Titulo={props.video03.titulo} 
-                        Video3ID={props.video03.id} 
-                        Video4Titulo={props.video04.titulo} 
-                        Video4ID={props.video04.id} 
-                    />
+                    key={uuid()}
+                    ColorTitulo={props.ColorCategoria} 
+                    TextoTitulo={props.TituloCategoria} 
+                    TextoSubtitulo={props.SubtituloCategoria} 
+                    Video1Titulo={props.Video01.titulo} 
+                    Video01ID={props.Video01.id} 
+                    Video02Titulo={props.Video02.titulo} 
+                    Video02ID={props.Video02.id} 
+                    Video03Titulo={props.Video03.titulo} 
+                    Video03ID={props.Video03.id} 
+                    Video04Titulo={props.Video04.titulo} 
+                    Video04ID={props.Video04.id} 
+                />
 
-                }) 
-            };
-            {
-                datosBackEnd.map ((props) => {
+            })};
 
-                    return <SliderInterno 
-                    ColorTitulo={props.color} 
-                    TextoTitulo={props.categoria} 
-                    TextoSubtitulo={props.texto} 
-                    Video1Titulo={props.video01.titulo} 
-                    Video1ID={props.video01.id} 
-                    Video2Titulo={props.video02.titulo} 
-                    Video2ID={props.video02.id} 
-                    Video3Titulo={props.video03.titulo} 
-                    Video3ID={props.video03.id} 
-                    Video4Titulo={props.video04.titulo} 
-                    Video4ID={props.video04.id} 
-                    />
+            {datosBackEnd.map ((props) => {
 
-                })
+                return <SliderInterno 
+                    key={uuid()}
+                    ColorTitulo={props.ColorCategoria} 
+                    TextoTitulo={props.TituloCategoria} 
+                    TextoSubtitulo={props.SubtituloCategoria} 
+                    Video1Titulo={props.Video01.titulo} 
+                    Video01ID={props.Video01.id} 
+                    Video02Titulo={props.Video02.titulo} 
+                    Video02ID={props.Video02.id} 
+                    Video03Titulo={props.Video03.titulo} 
+                    Video03ID={props.Video03.id} 
+                    Video04Titulo={props.Video04.titulo} 
+                    Video04ID={props.Video04.id} 
+                />
 
-            };
-            {
-                datosGestion.map ((props) => {
+            })};
 
-                    return <SliderInterno 
-                    ColorTitulo={props.color} 
-                    TextoTitulo={props.categoria} 
-                    TextoSubtitulo={props.texto} 
-                    Video1Titulo={props.video01.titulo} 
-                    Video1ID={props.video01.id} 
-                    Video2Titulo={props.video02.titulo} 
-                    Video2ID={props.video02.id} 
-                    Video3Titulo={props.video03.titulo} 
-                    Video3ID={props.video03.id} 
-                    Video4Titulo={props.video04.titulo} 
-                    Video4ID={props.video04.id} 
-                    />
+            {datosGestion.map ((props) => {
 
-                })
+                return <SliderInterno 
+                    key={uuid()}
+                    ColorTitulo={props.ColorCategoria} 
+                    TextoTitulo={props.TituloCategoria} 
+                    TextoSubtitulo={props.SubtituloCategoria} 
+                    Video1Titulo={props.Video01.titulo} 
+                    Video01ID={props.Video01.id} 
+                    Video02Titulo={props.Video02.titulo} 
+                    Video02ID={props.Video02.id} 
+                    Video03Titulo={props.Video03.titulo} 
+                    Video03ID={props.Video03.id} 
+                    Video04Titulo={props.Video04.titulo} 
+                    Video04ID={props.Video04.id} 
+                />
 
-            };
+            })};
 
-            {
-                datosCustom.map ((props) => {
+            {datosCustom.map ((props) => {
 
-                    return <SliderInterno 
-                    ColorTitulo={props.color} 
-                    TextoTitulo={props.categoria} 
-                    TextoSubtitulo={props.texto} 
-                    Video1Titulo={props.video01.titulo} 
-                    Video1ID={props.video01.id} 
-                    Video2Titulo={props.video02.titulo} 
-                    Video2ID={props.video02.id} 
-                    Video3Titulo={props.video03.titulo} 
-                    Video3ID={props.video03.id} 
-                    Video4Titulo={props.video04.titulo} 
-                    Video4ID={props.video04.id} 
-                    />
+                return <SliderInterno 
+                    key={uuid()}
+                    ColorTitulo={props.ColorCategoria} 
+                    TextoTitulo={props.TituloCategoria} 
+                    TextoSubtitulo={props.SubtituloCategoria} 
+                    Video1Titulo={props.Video01.titulo} 
+                    Video01ID={props.Video01.id} 
+                    Video02Titulo={props.Video02.titulo} 
+                    Video02ID={props.Video02.id} 
+                    Video03Titulo={props.Video03.titulo} 
+                    Video03ID={props.Video03.id} 
+                    Video04Titulo={props.Video04.titulo} 
+                    Video04ID={props.Video04.id} 
+                />
 
-                })
-
-            };
-
-            
+            })};
 
         </ContenedorSlider>
 
@@ -115,55 +148,99 @@ const SliderJulioFlix = () => {
 
 export default SliderJulioFlix;
 
-{/* <SliderFrontEnd 
-                ColorTitulo="#6BD1FF" 
-                TextoTitulo="Front-End" 
-                TextoSubtitulo="Formación Front-End de Alura."
-                Video1Titulo="Pensar como programador"
-                Video1ID="ov7vA5HFe6w"
-                Video2Titulo="Pensar como programador"
-                Video2ID="ov7vA5HFe6w"
-                Video3Titulo="Pensar como programador"
-                Video3ID="ov7vA5HFe6w"
-                Video4Titulo="Pensar como programador"
-                Video4ID="ov7vA5HFe6w"
-            />
-            <SliderBackEnd 
-                ColorTitulo="#00C86F" 
-                TextoTitulo="Back-End" 
-                TextoSubtitulo="Formación Back-End de Alura."
-                Video1Titulo="Pensar como programador"
-                Video1ID="ov7vA5HFe6w"
-                Video2Titulo="Pensar como programador"
-                Video2ID="ov7vA5HFe6w"
-                Video3Titulo="Pensar como programador"
-                Video3ID="ov7vA5HFe6w"
-                Video4Titulo="Pensar como programador"
-                Video4ID="ov7vA5HFe6w"
-            />
-            <SliderGestion 
-                ColorTitulo="#FE8C2A" 
-                TextoTitulo="Innovación & Gestión" 
-                TextoSubtitulo="Formación Integral de Alura."
-                Video1Titulo="Pensar como programador"
-                Video1ID="ov7vA5HFe6w"
-                Video2Titulo="Pensar como programador"
-                Video2ID="ov7vA5HFe6w"
-                Video3Titulo="Pensar como programador"
-                Video3ID="ov7vA5HFe6w"
-                Video4Titulo="Pensar como programador"
-                Video4ID="ov7vA5HFe6w"
-            />
-            <SliderCustom 
-                ColorTitulo={ColoresJulioFlix.textos} 
-                TextoTitulo="Agregados por el Autor" 
-                TextoSubtitulo="Formación Integral de Alura."
-                Video1Titulo="Pensar como programador"
-                Video1ID="ov7vA5HFe6w"
-                Video2Titulo="Pensar como programador"
-                Video2ID="ov7vA5HFe6w"
-                Video3Titulo="Pensar como programador"
-                Video3ID="ov7vA5HFe6w"
-                Video4Titulo="Pensar como programador"
-                Video4ID="ov7vA5HFe6w"
-/> */}
+
+// const SliderJulioFlix = () => {
+
+//     return (
+
+//         <ContenedorSlider>
+//             {
+//                 datosFrontEnd.map ((props) => {
+
+//                 return <SliderInterno 
+//                         ColorTitulo={props.color} 
+//                         TextoTitulo={props.categoria} 
+//                         TextoSubtitulo={props.texto} 
+//                         Video1Titulo={props.video01.titulo} 
+//                         Video1ID={props.video01.id} 
+//                         Video2Titulo={props.video02.titulo} 
+//                         Video2ID={props.video02.id} 
+//                         Video3Titulo={props.video03.titulo} 
+//                         Video3ID={props.video03.id} 
+//                         Video4Titulo={props.video04.titulo} 
+//                         Video4ID={props.video04.id} 
+//                     />
+
+//                 }) 
+//             };
+//             {
+//                 datosBackEnd.map ((props) => {
+
+//                     return <SliderInterno 
+//                     ColorTitulo={props.color} 
+//                     TextoTitulo={props.categoria} 
+//                     TextoSubtitulo={props.texto} 
+//                     Video1Titulo={props.video01.titulo} 
+//                     Video1ID={props.video01.id} 
+//                     Video2Titulo={props.video02.titulo} 
+//                     Video2ID={props.video02.id} 
+//                     Video3Titulo={props.video03.titulo} 
+//                     Video3ID={props.video03.id} 
+//                     Video4Titulo={props.video04.titulo} 
+//                     Video4ID={props.video04.id} 
+//                     />
+
+//                 })
+
+//             };
+//             {
+//                 datosGestion.map ((props) => {
+
+//                     return <SliderInterno 
+//                     ColorTitulo={props.color} 
+//                     TextoTitulo={props.categoria} 
+//                     TextoSubtitulo={props.texto} 
+//                     Video1Titulo={props.video01.titulo} 
+//                     Video1ID={props.video01.id} 
+//                     Video2Titulo={props.video02.titulo} 
+//                     Video2ID={props.video02.id} 
+//                     Video3Titulo={props.video03.titulo} 
+//                     Video3ID={props.video03.id} 
+//                     Video4Titulo={props.video04.titulo} 
+//                     Video4ID={props.video04.id} 
+//                     />
+
+//                 })
+
+//             };
+
+//             {
+//                 datosCustom.map ((props) => {
+
+//                     return <SliderInterno 
+//                     ColorTitulo={props.color} 
+//                     TextoTitulo={props.categoria} 
+//                     TextoSubtitulo={props.texto} 
+//                     Video1Titulo={props.video01.titulo} 
+//                     Video1ID={props.video01.id} 
+//                     Video2Titulo={props.video02.titulo} 
+//                     Video2ID={props.video02.id} 
+//                     Video3Titulo={props.video03.titulo} 
+//                     Video3ID={props.video03.id} 
+//                     Video4Titulo={props.video04.titulo} 
+//                     Video4ID={props.video04.id} 
+//                     />
+
+//                 })
+
+//             };
+
+            
+
+//         </ContenedorSlider>
+
+//     );
+
+    
+
+// };

@@ -25,7 +25,6 @@ export default function ListaCategorias (props) {
 
     <FormControl color="error" variant="filled" sx={{ backgroundColor:"whitesmoke", width:"335px", borderRadius:"10px 10px 0px 0px",}}>
 
-      {/* value={categoria} */}
       <InputLabel id="etiquetaDelSelect">Seleccionar Categoria para el Video</InputLabel>
       <Select onChange={manejarCambio} value={props.valor} required labelId="etiquetaDelSelect">
 
