@@ -16,123 +16,29 @@ const ContenedorSlider = styled ("section") ({
 
 const SliderJulioFlix = () => {
 
-    const [datosFrontEnd, setDatosFrontEnd] = useState([])
+    const [DatosCategorias, setDatosCategorias] = useState([])
     useEffect( () => {
 
-        fetch ("https://json-julioflix.onrender.com/FrontEnd")
+        fetch ("http://localhost:3001/Categorias")
             .then (response => response.json())
-            .then (data => setDatosFrontEnd(data))
+            .then (data => setDatosCategorias(data))
             .catch (err => console.log (err))
 
     }, []);
 
-    const [datosBackEnd, setDatosBackEnd] = useState([])
-    useEffect( () => {
-
-        fetch ("https://json-julioflix.onrender.com/BackEnd")
-            .then (response => response.json())
-            .then (data => setDatosBackEnd(data))
-            .catch (err => console.log (err))
-
-    }, []);
-
-    const [datosGestion, setDatosGestion] = useState([])
-    useEffect( () => {
-
-        fetch ("https://json-julioflix.onrender.com/Gestion")
-            .then (response => response.json())
-            .then (data => setDatosGestion(data))
-            .catch (err => console.log (err))
-
-    }, []);
-
-    const [datosCustom, setDatosCustom] = useState([])
-    useEffect( () => {
-
-        fetch ("https://json-julioflix.onrender.com/Custom")
-            .then (response => response.json())
-            .then (data => setDatosCustom(data))
-            .catch (err => alert ("No se ha podido cargar el JSON. Contacte al Admin.", err))
-
-    }, []);
 
     return (
 
         
         <ContenedorSlider>
 
-            {datosFrontEnd.map ((props) => {
+            {DatosCategorias.map ((props) => {
 
                 return <SliderInterno 
                     key={uuid()}
-                    ColorTitulo={props.ColorCategoria} 
-                    TextoTitulo={props.TituloCategoria} 
-                    TextoSubtitulo={props.SubtituloCategoria} 
-                    Video1Titulo={props.Video01.titulo} 
-                    Video01ID={props.Video01.id} 
-                    Video02Titulo={props.Video02.titulo} 
-                    Video02ID={props.Video02.id} 
-                    Video03Titulo={props.Video03.titulo} 
-                    Video03ID={props.Video03.id} 
-                    Video04Titulo={props.Video04.titulo} 
-                    Video04ID={props.Video04.id} 
-                />
-
-            })};
-
-            {datosBackEnd.map ((props) => {
-
-                return <SliderInterno 
-                    key={uuid()}
-                    ColorTitulo={props.ColorCategoria} 
-                    TextoTitulo={props.TituloCategoria} 
-                    TextoSubtitulo={props.SubtituloCategoria} 
-                    Video1Titulo={props.Video01.titulo} 
-                    Video01ID={props.Video01.id} 
-                    Video02Titulo={props.Video02.titulo} 
-                    Video02ID={props.Video02.id} 
-                    Video03Titulo={props.Video03.titulo} 
-                    Video03ID={props.Video03.id} 
-                    Video04Titulo={props.Video04.titulo} 
-                    Video04ID={props.Video04.id} 
-                />
-
-            })};
-
-            {datosGestion.map ((props) => {
-
-                return <SliderInterno 
-                    key={uuid()}
-                    ColorTitulo={props.ColorCategoria} 
-                    TextoTitulo={props.TituloCategoria} 
-                    TextoSubtitulo={props.SubtituloCategoria} 
-                    Video1Titulo={props.Video01.titulo} 
-                    Video01ID={props.Video01.id} 
-                    Video02Titulo={props.Video02.titulo} 
-                    Video02ID={props.Video02.id} 
-                    Video03Titulo={props.Video03.titulo} 
-                    Video03ID={props.Video03.id} 
-                    Video04Titulo={props.Video04.titulo} 
-                    Video04ID={props.Video04.id} 
-                />
-
-            })};
-
-            {datosCustom.map ((props) => {
-
-                return <SliderInterno 
-                    key={uuid()}
-                    ColorTitulo={props.ColorCategoria} 
-                    TextoTitulo={props.TituloCategoria} 
-                    TextoSubtitulo={props.SubtituloCategoria} 
-                    Video1Titulo={props.Video01.titulo} 
-                    Video01ID={props.Video01.id} 
-                    Video02Titulo={props.Video02.titulo} 
-                    Video02ID={props.Video02.id} 
-                    Video03Titulo={props.Video03.titulo} 
-                    Video03ID={props.Video03.id} 
-                    Video04Titulo={props.Video04.titulo} 
-                    Video04ID={props.Video04.id} 
+                    ColorCategoria={props.ColorCategoria} 
+                    TituloCategoria={props.TituloCategoria} 
+                    SubtituloCategoria={props.SubtituloCategoria} 
                 />
 
             })};

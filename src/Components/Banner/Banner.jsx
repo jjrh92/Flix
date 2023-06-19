@@ -88,7 +88,7 @@ const Banner = () => {
                 </ContenedorTextos>
     
                 <ContenedorVideoHeader>
-                    <Video ancho={"360"} alto={"200"} titulo={"Pensar como programador"} id={"ov7vA5HFe6w"} />
+                    <Video TituloVideo={"Pensar como programador"} IdYoutube={"ov7vA5HFe6w"} />
                 </ContenedorVideoHeader>
 
             </Hero>

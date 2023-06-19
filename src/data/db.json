@@ -1,131 +1,150 @@
 {
 
-  "FrontEnd": [
+  "Categorias": [
 
     {
-
+      "IdCategoria": 1,
       "TituloCategoria": "Front-End",
       "SubtituloCategoria": "Formación Front-End de Alura Latam",
-      "ColorCategoria": "#6BD1FF",
-      
-      "Video01": {
-        "titulo": "¿Cuando usar LET, VAR y CONST?",
-        "id": "PztCEdIJITY"
-      },
-
-      "Video02": {
-        "titulo": "¿Qué es JS?",
-        "id": "GJfOSoaXk4s"
-      },
-
-      "Video03": {
-        "titulo": "¿Equipo Front-End?",
-        "id": "rpvrLaBQwgg"
-      },
-
-      "Video04": {
-        "titulo": "Aprendiendo a utilizar Figma",
-        "id": "UuAX5azcvDQ"
-      }
-
-    }
-
-  ],
-
-  "BackEnd": [
+      "ColorCategoria": "#6BD1FF"
+    },
 
     {
-
+      "IdCategoria": 2,
       "TituloCategoria": "Back-End",
       "SubtituloCategoria": "Formación Back-End de Alura Latam",
-      "ColorCategoria": "#00C86F",
-
-      "Video01": {
-        "titulo": "Spring Framework",
-        "id": "t-iqt1b2qqk"
-      },
-
-      "Video02": {
-        "titulo": "¿Qué es SQL y NoSQL?",
-        "id": "cLLKVd5CNLc"
-      },
-
-      "Video03": {
-        "titulo": "Simplificando tu código en Java",
-        "id": "EoPvlE85XAQ"
-      },
-
-      "Video04": {
-        "titulo": "Backend de Tinder",
-        "id": "AE214uRJ2UQ"
-      }
-
-    }
-
-  ],
-
-  "Gestion": [
+      "ColorCategoria": "#00C86F"
+    },
 
     {
-
-      "TituloCategoria": "Innovación & Gestion",
+      "IdCategoria": 3,
+      "TituloCategoria": "Innovación & Gestión",
       "SubtituloCategoria": "Formación Innovación y Gestión de Alura Latam",
-      "ColorCategoria": "#FE8C2A",
-
-      "Video01": {
-        "titulo": "Qué son las Soft Skills",
-        "id": "vhwspfvI52k"
-      },
-
-      "Video02": {
-        "titulo": "Las 7 Soft Skills más deseadas por las empresas",
-        "id": "YhR7Zp8NUzE"
-      },
-
-      "Video03": {
-        "titulo": "¿Qué son las metodologias ágiles?",
-        "id": "6N3OkLCfK-0"
-      },
-
-      "Video04": {
-        "titulo": "Trabajando desde casa",
-        "id": "_zYbZ5S0VMw"
-      }
-
-    }
-
-  ],
-
-  "Custom": [
+      "ColorCategoria": "#FE8C2A"
+    },
 
     {
-
+      "IdCategoria": 4,
       "TituloCategoria": "Custom",
       "SubtituloCategoria": "Agregados por el autor.",
-      "ColorCategoria": "#DC1A28",
+      "ColorCategoria": "#DC1A28"
+    }
 
-      "Video01": {
-        "titulo": "React para Haters",
-        "id": "HyWYpM_S-2c"
-      },
+   ],
 
-      "Video02": {
-        "titulo": "React en 100 Segundos",
-        "id": "Tn6-PIqc4UM"
-      },
+  "Videos": [
 
-      "Video03": {
-        "titulo": "Hooks de React",
-        "id": "TNhaISOUy6Q"
-      },
+    {
+      "IdVideo": 1,
+      "IdCategoria": 1,
+      "TituloVideo": "¿Cuando usar LET, VAR y CONST?",
+      "IdYoutube": "PztCEdIJITY"
+    },
 
-      "Video04": {
-        "titulo": "Mirage 2000",
-        "id": "g6xM2cug1ZQ"
-      }
+    {
+      "IdVideo": 2,
+      "IdCategoria": 1,
+      "TituloVideo": "¿Qué es JS?",
+      "IdYoutube": "GJfOSoaXk4s"
+    },
 
+    {
+      "IdVideo": 3,
+      "IdCategoria": 1,
+      "TituloVideo": "¿Equipo Front-End?",
+      "IdYoutube": "rpvrLaBQwgg"
+    },
+
+    {
+      "IdVideo": 4,
+      "IdCategoria": 1,
+      "TituloVideo": "Aprendiendo a utilizar Figma",
+      "IdYoutube": "UuAX5azcvDQ"
+    },
+
+    {
+      "IdVideo": 1,
+      "IdCategoria": 2,
+      "TituloVideo": "Spring Framework",
+      "IdYoutube": "t-iqt1b2qqk"
+    },
+
+    {
+      "IdVideo": 2,
+      "IdCategoria": 2,
+      "TituloVideo": "¿Qué es SQL y NoSQL?",
+      "IdYoutube": "cLLKVd5CNLc"
+    },
+
+    {
+      "IdVideo": 3,
+      "IdCategoria": 2,
+      "TituloVideo": "Simplificando tu código en Java",
+      "IdYoutube": "EoPvlE85XAQ"
+    },
+
+    {
+      "IdVideo": 4,
+      "IdCategoria": 2,
+      "TituloVideo": "Backend de Tinder",
+      "IdYoutube": "AE214uRJ2UQ"
+    },
+
+    {
+      "IdVideo": 1,
+      "IdCategoria": 3,
+      "TituloVideo": "Qué son las Soft Skills",
+      "IdYoutube": "vhwspfvI52k"
+    },
+
+    {
+      "IdVideo": 2,
+      "IdCategoria": 3,
+      "TituloVideo": "Las 7 Soft Skills más deseadas por las empresas",
+      "IdYoutube": "YhR7Zp8NUzE"
+    },
+
+    {
+      "IdVideo": 3,
+      "IdCategoria": 3,
+      "TituloVideo": "¿Qué son las metodologias ágiles?",
+      "IdYoutube": "6N3OkLCfK-0"
+    },
+
+    {
+      "IdVideo": 4,
+      "IdCategoria": 3,
+      "TituloVideo": "Trabajando desde casa",
+      "IdYoutube": "_zYbZ5S0VMw"
+    },
+
+    {
+      "IdVideo": 1,
+      "IdCategoria": 4,
+      "TituloVideo": "React para Haters",
+      "IdYoutube": "HyWYpM_S-2c"
+    },
+
+    {
+      "IdVideo": 2,
+      "IdCategoria": 4,
+      "TituloVideo": "React en 100 Segundos",
+      "IdYoutube": "Tn6-PIqc4UM"
+    },
+
+    {
+      "IdVideo": 3,
+      "IdCategoria": 4,
+      "TituloVideo": "Hooks de React",
+      "IdYoutube": "TNhaISOUy6Q"
+    },
+
+    {
+      "IdVideo": 4,
+      "IdCategoria": 4,
+      "TituloVideo": "Mirage2K",
+      "IdYoutube": "g6xM2cug1ZQ"
     }
 
   ]
-
 }

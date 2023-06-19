@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { styled } from '@mui/system';
 import { ColoresJulioFlix } from "../../../../global";
 import Video from "../../VideoCard/VideoCard";
@@ -65,18 +65,39 @@ const ContenedorVideos = styled ("div") ({
 
 const SliderInterno = (props) => {
 
+    const [DatosVideos, setDatosVideos] = useState([])
+    useEffect( () => {
+
+        fetch ("http://localhost:3001/Videos")
+            .then (response => response.json())
+            .then (data => setDatosVideos(data))
+            .catch (err => console.log (err))
+
+    }, []);
+
     return (
 
         <ContenedorCategoria>
             <ContenedorTextosCategoria>
-                <H1Categoria style={{color: `${props.ColorTitulo}`}}>{props.TextoTitulo}</H1Categoria>
-                <SubTexto key={uuid()}>{props.TextoSubtitulo}</SubTexto>
+                <H1Categoria style={{color: `${props.ColorCategoria}`}}>{props.TituloCategoria}</H1Categoria>
+                <SubTexto key={uuid()}>{props.SubtituloCategoria}</SubTexto>
             </ContenedorTextosCategoria>
             <ContenedorVideos>
-                <Video key={uuid()} titulo={props.Video1Titulo} id={props.Video01ID} />
-                <Video key={uuid()} titulo={props.Video2Titulo} id={props.Video02ID} />
-                <Video key={uuid()} titulo={props.Video3Titulo} id={props.Video03ID} />
-                <Video key={uuid()} titulo={props.Video4Titulo} id={props.Video04ID} />
+
+            {DatosVideos.map ((props) => {
+
+                return <Video
+
+                    IdVideo={props.IdVideo}
+                    IdCategoria={props.IdCategoria}
+                    TituloVideo={props.TituloVideo}
+                    IdYoutube={props.IdYoutube}
+
+                
+                />
+
+            })};
+
             </ContenedorVideos>
         </ContenedorCategoria> 
 
