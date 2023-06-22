@@ -19,13 +19,12 @@ const SliderJulioFlix = () => {
     const [DatosCategorias, setDatosCategorias] = useState([])
     useEffect( () => {
 
-        fetch ("http://localhost:3001/Categorias")
+        fetch ("http://localhost:3001/Categorias/")
             .then (response => response.json())
             .then (data => setDatosCategorias(data))
             .catch (err => console.log (err))
 
     }, []);
-
 
     return (
 
@@ -38,9 +37,9 @@ const SliderJulioFlix = () => {
                     key={uuid()}
                     ColorCategoria={props.ColorCategoria} 
                     TituloCategoria={props.TituloCategoria} 
-                    SubtituloCategoria={props.SubtituloCategoria} 
+                    SubtituloCategoria={props.SubtituloCategoria}
                 />
-
+                
             })};
 
         </ContenedorSlider>

@@ -92,11 +92,11 @@ const SliderInterno = (props) => {
                     IdCategoria={props.IdCategoria}
                     TituloVideo={props.TituloVideo}
                     IdYoutube={props.IdYoutube}
-
                 
                 />
 
             })};
+
 
             </ContenedorVideos>
         </ContenedorCategoria> 
