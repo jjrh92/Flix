@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { styled } from '@mui/system';
 import { ColoresJulioFlix } from "../../../global";
 import Slider from "../Slider/Slider";
-import uuid from "react-uuid";
 
 const ContenedorSlider = styled ("section") ({
 
@@ -33,11 +32,11 @@ const SliderJulioFlix = () => {
 
             {DatosCategorias.map ((props) => {
 
-                return <Slider 
-                    key={uuid()}
-                    ColorCategoria={props.ColorCategoria} 
+                return <Slider
+                    IdCategoria={props.IdCategoria}
                     TituloCategoria={props.TituloCategoria} 
                     SubtituloCategoria={props.SubtituloCategoria}
+                    ColorCategoria={props.ColorCategoria} 
                 />
                 
             })};

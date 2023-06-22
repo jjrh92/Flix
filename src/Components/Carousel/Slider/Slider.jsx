@@ -25,7 +25,7 @@ const ContenedorTextosCategoria = styled ("div") ({
     flexDirection: "row",
     alignItems: "center",
     paddingBottom: "20px",
-    
+
 });
 
 const H1Categoria = styled ("h1") ({
@@ -68,7 +68,7 @@ const Slider = (props) => {
     const [DatosVideos, setDatosVideos] = useState([])
     useEffect( () => {
 
-        fetch ("http://localhost:3001/Videos")
+        fetch ("http://localhost:3001/Videos/")
             .then (response => response.json())
             .then (data => setDatosVideos(data))
             .catch (err => console.log (err))
@@ -82,12 +82,15 @@ const Slider = (props) => {
                 <H1Categoria style={{color: `${props.ColorCategoria}`}}>{props.TituloCategoria}</H1Categoria>
                 <SubTexto key={uuid()}>{props.SubtituloCategoria}</SubTexto>
             </ContenedorTextosCategoria>
-            <ContenedorVideos>
+            <ContenedorVideos IdCategoria={props.IdCategoria}>
 
             {DatosVideos.map ((props) => {
 
-                return <Video
 
+
+                return <Video
+                    
+                    key={uuid()}
                     IdVideo={props.IdVideo}
                     IdCategoria={props.IdCategoria}
                     TituloVideo={props.TituloVideo}
@@ -106,100 +109,3 @@ const Slider = (props) => {
 };
 
 export default Slider;
-
-
-// const SliderJulioFlix = () => {
-
-//     return (
-
-//         <ContenedorSlider>
-//             {
-//                 datosFrontEnd.map ((props) => {
-
-//                 return <SliderInterno 
-//                         ColorTitulo={props.color} 
-//                         TextoTitulo={props.categoria} 
-//                         TextoSubtitulo={props.texto} 
-//                         Video1Titulo={props.video01.titulo} 
-//                         Video1ID={props.video01.id} 
-//                         Video2Titulo={props.video02.titulo} 
-//                         Video2ID={props.video02.id} 
-//                         Video3Titulo={props.video03.titulo} 
-//                         Video3ID={props.video03.id} 
-//                         Video4Titulo={props.video04.titulo} 
-//                         Video4ID={props.video04.id} 
-//                     />
-
-//                 }) 
-//             };
-//             {
-//                 datosBackEnd.map ((props) => {
-
-//                     return <SliderInterno 
-//                     ColorTitulo={props.color} 
-//                     TextoTitulo={props.categoria} 
-//                     TextoSubtitulo={props.texto} 
-//                     Video1Titulo={props.video01.titulo} 
-//                     Video1ID={props.video01.id} 
-//                     Video2Titulo={props.video02.titulo} 
-//                     Video2ID={props.video02.id} 
-//                     Video3Titulo={props.video03.titulo} 
-//                     Video3ID={props.video03.id} 
-//                     Video4Titulo={props.video04.titulo} 
-//                     Video4ID={props.video04.id} 
-//                     />
-
-//                 })
-
-//             };
-//             {
-//                 datosGestion.map ((props) => {
-
-//                     return <SliderInterno 
-//                     ColorTitulo={props.color} 
-//                     TextoTitulo={props.categoria} 
-//                     TextoSubtitulo={props.texto} 
-//                     Video1Titulo={props.video01.titulo} 
-//                     Video1ID={props.video01.id} 
-//                     Video2Titulo={props.video02.titulo} 
-//                     Video2ID={props.video02.id} 
-//                     Video3Titulo={props.video03.titulo} 
-//                     Video3ID={props.video03.id} 
-//                     Video4Titulo={props.video04.titulo} 
-//                     Video4ID={props.video04.id} 
-//                     />
-
-//                 })
-
-//             };
-
-//             {
-//                 datosCustom.map ((props) => {
-
-//                     return <SliderInterno 
-//                     ColorTitulo={props.color} 
-//                     TextoTitulo={props.categoria} 
-//                     TextoSubtitulo={props.texto} 
-//                     Video1Titulo={props.video01.titulo} 
-//                     Video1ID={props.video01.id} 
-//                     Video2Titulo={props.video02.titulo} 
-//                     Video2ID={props.video02.id} 
-//                     Video3Titulo={props.video03.titulo} 
-//                     Video3ID={props.video03.id} 
-//                     Video4Titulo={props.video04.titulo} 
-//                     Video4ID={props.video04.id} 
-//                     />
-
-//                 })
-
-//             };
-
-            
-
-//         </ContenedorSlider>
-
-//     );
-
-    
-
-// };

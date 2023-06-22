@@ -5,6 +5,7 @@ import { styled } from '@mui/system';
 import Boton from "../Boton/Boton";
 import CampoTexto from "../CampoTexto/CampoTexto";
 import ListaCategorias from "../ListaCategorias/ListaCategorias";
+import uuid from "react-uuid";
 
 const ContenedorFormulario = styled ("section") ({
 
@@ -82,10 +83,11 @@ const Formulario = () => {
 
         let datosAEnviar = {
 
-            nombre: nombre,
-            id: id,
-            categoria: categoria,
-
+            IdVideo: uuid(),
+            IdCategoria: categoria,
+            TituloVideo: nombre,
+            IdYoutube: id,
+            
         }
 
         console.log ("Se han enviado los siguientes datos ",datosAEnviar)
