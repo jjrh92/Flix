@@ -17,14 +17,13 @@ const Iframe = styled ("iframe") ({
 
 });
 
-const Video = ({IdVideo, IdCategoria,TituloVideo, IdYoutube,}) => {
+const Video = ({IdVideo,TituloVideo, IdYoutube,}) => {
 
     return (
 
         <Contenedor>
-            <Iframe IdVideo={IdVideo} IdCategoria={IdCategoria} title={TituloVideo} src={`https://www.youtube.com/embed/${IdYoutube}`} allowFullScreen/>
+            <Iframe IdVideo={IdVideo} title={TituloVideo} src={`https://www.youtube.com/embed/${IdYoutube}`} allowFullScreen/>
         </Contenedor>
-        
 
     )
 

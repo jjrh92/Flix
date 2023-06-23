@@ -12,7 +12,7 @@ const ContenedorCategoria = styled ("div") ({
     flexWrap: "wrap",
     paddingLeft: "40px",
     paddingRight: "40px",
-    paddingBottom: "30px",
+    paddingBottom: "40px",
     backgroundColor: ColoresJulioFlix.fondo,
     justifyContent: "center",
     alignItems: "start",
@@ -25,6 +25,8 @@ const ContenedorTextosCategoria = styled ("div") ({
     flexDirection: "row",
     alignItems: "center",
     paddingBottom: "20px",
+    paddingTop: "20px",
+    backgroundColor: ColoresJulioFlix.fondo,
 
 });
 
@@ -59,6 +61,7 @@ const ContenedorVideos = styled ("div") ({
     gap: "20px",
     width: "100%",
     paddingRight: "40px",
+    paddingBottom: "5px",
     
 });
 
@@ -79,8 +82,8 @@ const Slider = (props) => {
 
         <ContenedorCategoria>
             <ContenedorTextosCategoria>
-                <H1Categoria style={{color: `${props.ColorCategoria}`}}>{props.TituloCategoria}</H1Categoria>
-                <SubTexto key={uuid()}>{props.SubtituloCategoria}</SubTexto>
+                <H1Categoria style={{color: "#DC1A28"}}>Categoria Custom</H1Categoria>
+                <SubTexto>Agregados por el autor.</SubTexto>
             </ContenedorTextosCategoria>
             <ContenedorVideos IdCategoria={props.IdCategoria}>
 
@@ -109,3 +112,4 @@ const Slider = (props) => {
 };
 
 export default Slider;
+

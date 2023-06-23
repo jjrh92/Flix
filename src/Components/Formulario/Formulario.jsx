@@ -4,8 +4,9 @@ import { ColoresJulioFlix } from "../../global";
 import { styled } from '@mui/system';
 import Boton from "../Boton/Boton";
 import CampoTexto from "../CampoTexto/CampoTexto";
-import ListaCategorias from "../ListaCategorias/ListaCategorias";
 import uuid from "react-uuid";
+import TablaListado from "./TablaListado";
+
 
 const ContenedorFormulario = styled ("section") ({
 
@@ -15,7 +16,7 @@ const ContenedorFormulario = styled ("section") ({
     alignItems: "center",
     padding: "80px 0px",
     backgroundColor: ColoresJulioFlix.fondo,
-    gap: "50px",
+    gap: "100px",
     
 });
 
@@ -57,7 +58,7 @@ const Form = styled ("form") ({
     
 });
 
-const ContenedorGenerico = styled ("div") ({
+const ContenedorTabla = styled ("div") ({
 
     width: "90%",
     boxShadow: "1px 1px 15px 5px #DC1A28",
@@ -65,17 +66,15 @@ const ContenedorGenerico = styled ("div") ({
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    paddingBottom: "30px",
+    paddingBottom: "60px",
     gap: "30px",
     
 });
 
-
 const Formulario = () => {
-
-    const [nombre, actualizarNombre] = useState("");
-    const [id, actualizarID] = useState("");
-    const [categoria, actualizarCategoria] = useState("");
+    
+    const [nombre, actualizarNombre] = useState ("");
+    const [id, actualizarID] = useState ("");
 
     const manejarEnvio = (evento) => {
 
@@ -84,13 +83,13 @@ const Formulario = () => {
         let datosAEnviar = {
 
             IdVideo: uuid(),
-            IdCategoria: categoria,
             TituloVideo: nombre,
             IdYoutube: id,
             
         }
 
         console.log ("Se han enviado los siguientes datos ",datosAEnviar)
+        alert ("Video agregado con exito")
 
     }
     
@@ -99,18 +98,16 @@ const Formulario = () => {
         <ContenedorFormulario>
             <Form autoComplete="off" id="formularioVideo" onSubmit={manejarEnvio}>
                 <H1Formulario>Nuevo Video</H1Formulario>
-                <CampoTexto valor={nombre} actualizarValor={actualizarNombre} id={"tituloVideo"} label={"Nombre del Video"} placeholder={"Ingrese nombre del Video"}/>
-                <CampoTexto valor={id} actualizarValor={actualizarID} id={"idVideo"} label={"Id del Video (formato Youtube"} placeholder={"Ejemplo: jfKfPfyJRdk"}/>
-                <ListaCategorias valor={categoria} actualizarCategoria={actualizarCategoria}/>
+                <CampoTexto valor={nombre} actualizarValor={actualizarNombre} id={"tituloVideo"} label={"Titulo del Video"} placeholder={"Ingrese titulo del Video"}/>
+                <CampoTexto valor={id} actualizarValor={actualizarID} id={"idVideo"} label={"Id del Video (formato Youtube)"} placeholder={"Ejemplo: jfKfPfyJRdk"}/>
                 <ContenedorBotones>
                     <Boton tipo="submit" title="Agregar un nuevo video al homepage" texto={"Agregar Video"}/>
                 </ContenedorBotones>
             </Form>
-            <ContenedorGenerico>
+            <ContenedorTabla>
                 <H1Formulario>Listado de Videos</H1Formulario>
-
-
-            </ContenedorGenerico>
+                <TablaListado />
+            </ContenedorTabla>
         </ContenedorFormulario>
 
     );
