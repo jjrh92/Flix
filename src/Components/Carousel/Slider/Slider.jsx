@@ -94,7 +94,7 @@ const Slider = (props) => {
                 return <Video
                     
                     key={uuid()}
-                    IdVideo={props.IdVideo}
+                    id={props.id}
                     IdCategoria={props.IdCategoria}
                     TituloVideo={props.TituloVideo}
                     IdYoutube={props.IdYoutube}

@@ -1,30 +1,24 @@
 {
   "Videos": [
     {
-      "IdVideo": 1,
+      "id": 1,
       "TituloVideo": "React para Haters",
       "IdYoutube": "HyWYpM_S-2c"
     },
     {
-      "IdVideo": 2,
+      "id": 2,
       "TituloVideo": "React en 100 Segundos",
       "IdYoutube": "Tn6-PIqc4UM"
     },
     {
-      "IdVideo": 3,
+      "id": 3,
       "TituloVideo": "Hooks de React",
       "IdYoutube": "TNhaISOUy6Q"
     },
     {
-      "IdVideo": 4,
+      "id": 4,
       "TituloVideo": "Mirage2K",
       "IdYoutube": "g6xM2cug1ZQ"
-    },
-    {
-      "id": 6,
-      "first_name": "Fred",
-      "last_name": "Blair",
-      "email": "freddyb34@gmail.com"
     }
   ]
 }

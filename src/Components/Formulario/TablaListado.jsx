@@ -50,7 +50,7 @@ const TablaListado = () => {
                 </tr>
         {DatosLista.map ((props) => {
         return <tr key={uuid()}>
-                    <TD>{props.IdVideo}</TD>
+                    <TD>{props.id}</TD>
                     <TD>{props.TituloVideo}</TD>
                     <TD><Link title="Presiona para abrir en otra pestaña" sx={{color: ColoresJulioFlix.textos}} underline="none" href={`https://youtu.be/${props.IdYoutube}`} target="_blank" rel="noopener noreferrer">{props.IdYoutube}</Link></TD>
                     <TD><DeleteForeverIcon/></TD>

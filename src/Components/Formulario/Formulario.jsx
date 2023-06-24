@@ -81,35 +81,23 @@ const Formulario = () => {
 
         evento.preventDefault ();
 
-        let datosAEnviar = {
-			
-			IdVideo: uuid(),
-			TituloVideo: nombre,
-			IdYoutube: id,
-					
-		}
-
 		axios.post('http://localhost:3001/Videos', {
 
-			id: 6,
-			first_name: 'Fred',
-			last_name: 'Blair',
-			email: 'freddyb34@gmail.com'
+			id: uuid(),
+			TituloVideo: nombre,
+			IdYoutube: id,
 
 		}).then(resp => {
 
-			console.log(resp.data);
+			console.log ("Se han enviado los siguientes datos ",resp.data);
 
 		}).catch(error => {
 
 			console.log(error);
-			
+
 		});
 
-        console.log ("Se han enviado los siguientes datos ",datosAEnviar)
-
         alert ("Video agregado con exito")
-
 
     }
 
@@ -119,7 +107,7 @@ const Formulario = () => {
             <Form autoComplete="off" id="formularioVideo" onSubmit={manejarEnvio}>
                 <H1Formulario>Nuevo Video</H1Formulario>
                 <CampoTexto valor={nombre} actualizarValor={actualizarNombre} id={"TituloVideo"} label={"Titulo del Video"} placeholder={"Ingrese titulo del Video"}/>
-                <CampoTexto valor={id} actualizarValor={actualizarID} id={"idVideo"} label={"Id del Video (formato Youtube)"} placeholder={"Ejemplo: jfKfPfyJRdk"}/>
+                <CampoTexto valor={id} actualizarValor={actualizarID} IdYoutube={"idVideo"} label={"Id del Video (formato Youtube)"} placeholder={"Ejemplo: jfKfPfyJRdk"}/>
                 <ContenedorBotones>
                     <Boton tipo="submit" title="Agregar un nuevo video al homepage" texto={"Agregar Video"}/>
                 </ContenedorBotones>
