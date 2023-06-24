@@ -83,7 +83,7 @@ const Slider = (props) => {
         <ContenedorCategoria>
             <ContenedorTextosCategoria>
                 <H1Categoria style={{color: "#DC1A28"}}>Categoria Custom</H1Categoria>
-                <SubTexto>Agregados por el autor.</SubTexto>
+                <SubTexto>Videos agregados por el autor.</SubTexto>
             </ContenedorTextosCategoria>
             <ContenedorVideos IdCategoria={props.IdCategoria}>
 

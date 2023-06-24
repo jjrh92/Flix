@@ -16,13 +16,14 @@ const ContenedorBanner = styled ("section") ({
     backgroundSize: "cover",
     height: "100vh",
     borderBottom: "1px solid",
+    borderRight: "1px solid",
     borderColor: ColoresJulioFlix.textos,
 
 });
 
 const H1Hero = styled ("h1") ({
 
-    color: ColoresJulioFlix.textos,
+    color: "#F5F5F5",
     fontFamily: "Roboto",
     fontSize: "46px",
     lineHeight: "54px",
@@ -32,7 +33,7 @@ const H1Hero = styled ("h1") ({
 
 const TextoHero = styled ("p") ({
 
-    color: ColoresJulioFlix.textos,
+    color: "#F5F5F5",
     fontFamily: "Roboto",
     fontSize: "18px",
     lineHeight: "21px",
@@ -83,12 +84,12 @@ const Banner = () => {
             <Hero>
 
                 <ContenedorTextos>
-                    <H1Hero>Challenge React</H1Hero>
-                    <TextoHero>Este challenge es una forma de aprendizaje. Es un mecanismo donde podrás comprometerte en la resolución de un problema para poder aplicar todos los conocimientos adquiridos en la formación de React.</TextoHero>
+                    <H1Hero>Dassault Mirage 50</H1Hero>
+                    <TextoHero>Proyecto de gestor de videos utilizando React. Las operaciones CRUD se pueden ver desde el boton "Nuevo Video". En el proyecto se utiliza MaterialUI, JSON-Server, Axios, uuid y otras librerias. </TextoHero>
                 </ContenedorTextos>
     
                 <ContenedorVideoHeader>
-                    <Video TituloVideo={"Pensar como programador"} IdYoutube={"ov7vA5HFe6w"} />
+                    <Video TituloVideo={"Mirage Venezuela"} IdYoutube={"igZcb6jA3vU"} />
                 </ContenedorVideoHeader>
 
             </Hero>
