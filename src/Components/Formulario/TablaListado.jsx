@@ -13,7 +13,7 @@ const Tabla = styled ("table") ({
     display: "flex",
     justifyContent: "center",
     userSelect: "none",
-
+    fontFamily: "Roboto",
 });
 
 const TD = styled ("td") ({
@@ -24,6 +24,12 @@ const TD = styled ("td") ({
 
 });
 
+const eliminarVideo = (className) => {
+
+    alert ("Se ha presionado el boto con el id ", className)
+
+};
+
 const TablaListado = () => {
     
     const [DatosLista, setDatosLista] = useState([])
@@ -32,12 +38,11 @@ const TablaListado = () => {
         fetch ("http://localhost:3001/Videos/")
             .then (response => response.json())
             .then (data => setDatosLista(data))
-            .catch (err => console.log (err))
+            .catch (err => alert ("No se ha podido conectar al JSON-SERVER: "+ err))
 
     }, []);
     
     return (
-
 
         <Tabla>
             <tbody>
@@ -53,7 +58,7 @@ const TablaListado = () => {
                     <TD>{props.id}</TD>
                     <TD>{props.TituloVideo}</TD>
                     <TD><Link title="Presiona para abrir en otra pestaña" sx={{color: ColoresJulioFlix.textos}} underline="none" href={`https://youtu.be/${props.IdYoutube}`} target="_blank" rel="noopener noreferrer">{props.IdYoutube}</Link></TD>
-                    <TD><DeleteForeverIcon/></TD>
+                    <TD><DeleteForeverIcon title={props.id}/></TD>
                     <TD><AutoFixHighIcon/></TD>
                 </tr>
         })}

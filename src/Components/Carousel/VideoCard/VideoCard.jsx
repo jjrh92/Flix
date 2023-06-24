@@ -1,7 +1,6 @@
 import React from "react";
 import { styled } from '@mui/system';
 import { ColoresJulioFlix } from "../../../global";
-import uuid from "react-uuid";
 
 const Contenedor = styled ("div") ({
 
@@ -23,7 +22,7 @@ const Video = ({id,TituloVideo, IdYoutube,}) => {
     return (
 
         <Contenedor>
-            <Iframe id={uuid()} title={TituloVideo} src={`https://www.youtube.com/embed/${IdYoutube}`} allowFullScreen/>
+            <Iframe id={id} title={TituloVideo} src={`https://www.youtube.com/embed/${IdYoutube}`} allowFullScreen/>
         </Contenedor>
 
     )

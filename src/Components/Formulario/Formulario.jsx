@@ -90,14 +90,13 @@ const Formulario = () => {
 		}).then(resp => {
 
 			console.log ("Se han enviado los siguientes datos ",resp.data);
+            alert ("Video agregado con exito", resp.data);
 
 		}).catch(error => {
 
-			console.log(error);
+            alert ("No se ha podido agregar el video. ", error)
 
 		});
-
-        alert ("Video agregado con exito")
 
     }
 

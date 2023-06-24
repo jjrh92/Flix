@@ -74,7 +74,7 @@ const Slider = (props) => {
         fetch ("http://localhost:3001/Videos/")
             .then (response => response.json())
             .then (data => setDatosVideos(data))
-            .catch (err => console.log (err))
+            .catch (err => alert ("No se ha podido conectar al JSON-SERVER: "+ err))
 
     }, []);
 
