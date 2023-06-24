@@ -13,7 +13,7 @@ const ContenedorBanner = styled ("section") ({
     backgroundColor: ColoresJulioFlix.fondo,
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
-    backgroundSize: "auto",
+    backgroundSize: "cover",
     height: "100vh",
     borderBottom: "1px solid",
     borderColor: ColoresJulioFlix.textos,
