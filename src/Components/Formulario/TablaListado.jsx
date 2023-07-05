@@ -4,6 +4,7 @@ import { styled } from '@mui/system';
 import { Link } from "@mui/material";
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import AutoFixHighIcon from '@mui/icons-material/AutoFixHigh';
+import Swal from "sweetalert2";
 import uuid from "react-uuid";
 import axios from "axios";
 
@@ -24,6 +25,7 @@ const TD = styled ("td") ({
     padding: "30px",
 
 });
+
 
 
 const TablaListado = () => {
@@ -48,8 +50,58 @@ const TablaListado = () => {
 
         });
 
-        alert ("Video Eliminado ID: " +evento.currentTarget.id+ ". \nSe actualizara la pagina.");
-        window.location.reload();
+        Swal.fire ({
+
+            timer: 2000,
+            position: 'center',
+            icon: 'success',
+            title: "Video Eliminado ID: " +evento.currentTarget.id+ ". \nSe actualizara la pagina en breve.",
+            iconColor: '#DC1A28',
+            color: '#DC1A28',
+            background: '#121212',
+            showConfirmButton: false,
+
+        })
+
+        setTimeout(() => {
+
+            window.location.reload();
+
+        }, 2000);
+
+    };
+
+    const EditarVideo = evento => {
+
+        let UsuarioDefineTitulo = prompt("Ingrese titulo nuevo para este video.");
+        let UsuarioDefineIdYoutube = prompt("Ingrese URL de youtube para este video. (Formato Youtube 11 caracteres)", "i43tkaTXtwI");
+
+
+        axios.put(`http://localhost:3001/Videos/${evento.currentTarget.id}`, {
+
+			TituloVideo: UsuarioDefineTitulo,
+			IdYoutube: UsuarioDefineIdYoutube,
+
+        })
+
+        Swal.fire ({
+
+            timer: 2000,
+            position: 'center',
+            icon: 'success',
+            title: "Video Editado con exito. \nSe actualizara la pagina en breve.",
+            iconColor: '#DC1A28',
+            color: '#DC1A28',
+            background: '#121212',
+            showConfirmButton: false,
+
+        })
+
+        setTimeout(() => {
+
+            window.location.reload();
+
+        }, 2000);
 
 
     };
@@ -69,9 +121,9 @@ const TablaListado = () => {
         return <tr key={uuid()}>
                     <TD>{props.id}</TD>
                     <TD>{props.TituloVideo}</TD>
-                    <TD><Link title="Presiona para abrir en otra pestaña" sx={{color: ColoresJulioFlix.textos}} underline="none" href={`https://youtu.be/${props.IdYoutube}`} target="_blank" rel="noopener noreferrer">{props.IdYoutube}</Link></TD>
+                    <TD><Link title="Presiona para abrir video en una pestaña nueva" sx={{color: ColoresJulioFlix.textos}} underline="none" href={`https://youtu.be/${props.IdYoutube}`} target="_blank" rel="noopener noreferrer">{props.IdYoutube}</Link></TD>
                     <TD onClick={EliminarVideo} id={props.id} title={"Eliminar el Video ID: "+ props.id+ "."}><DeleteForeverIcon/></TD>
-                    <TD><AutoFixHighIcon/></TD>
+                    <TD onClick={EditarVideo} id={props.id} title={"Editar el Video ID: "+ props.id+ "."}><AutoFixHighIcon/></TD>
                 </tr>
         })}
             </tbody>

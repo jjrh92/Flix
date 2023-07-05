@@ -19,6 +19,7 @@
     "react-uuid": "^2.0.0",
     "slick-carousel": "^1.8.1",
     "styled-components": "^5.3.11",
+    "sweetalert2": "^11.7.12",
     "swiper": "^9.4.0",
     "web-vitals": "^2.1.4"
   },

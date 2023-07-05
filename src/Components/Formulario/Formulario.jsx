@@ -7,6 +7,7 @@ import CampoTexto from "../CampoTexto/CampoTexto";
 import uuid from "react-uuid";
 import TablaListado from "./TablaListado";
 import axios from "axios";
+import Swal from 'sweetalert2'
 
 
 const ContenedorFormulario = styled ("section") ({
@@ -89,12 +90,40 @@ const Formulario = () => {
 
 		}).then(resp => {
 
-			console.log ("Se han enviado los siguientes datos ",resp.data);
-            alert ("Video agregado con exito", resp.data);
+            Swal.fire ({
+
+                timer: 2000,
+                position: 'center',
+                icon: 'success',
+                title: "Video Agregado con exito. \nSe actualizara la pagina en breve.",
+                iconColor: '#DC1A28',
+                color: '#DC1A28',
+                background: '#121212',
+                showConfirmButton: false,
+
+            })
+
+            setTimeout(() => {
+
+                window.location.reload();
+    
+            }, 2000);
 
 		}).catch(error => {
 
-            alert ("No se ha podido agregar el video. ", error)
+            Swal.fire ({
+
+                timer: 2000,
+                position: 'center',
+                icon: 'error',
+                title: 'No se pudo agregar el video',
+                iconColor: '#DC1A28',
+                color: '#DC1A28',
+                background: '#121212',
+                showConfirmButton: false,
+
+            })
+
 
 		});
 
