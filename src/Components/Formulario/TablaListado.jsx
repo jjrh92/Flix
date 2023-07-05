@@ -33,7 +33,7 @@ const TablaListado = () => {
     const [DatosLista, setDatosLista] = useState([])
     useEffect( () => {
 
-        fetch ("http://localhost:3001/Videos/")
+        fetch ("https://json-julioflix.onrender.com/Videos/")
             .then (response => response.json())
             .then (data => setDatosLista(data))
             .catch (err => alert ("No se ha podido conectar al JSON-SERVER: "+ err))
@@ -42,7 +42,7 @@ const TablaListado = () => {
 
     const EliminarVideo = evento => {
 
-        axios.delete(`http://localhost:3001/Videos/${evento.currentTarget.id}`)
+        axios.delete(`https://json-julioflix.onrender.com/Videos/${evento.currentTarget.id}`)
 
         .catch(error => {
 
@@ -77,7 +77,7 @@ const TablaListado = () => {
         let UsuarioDefineIdYoutube = prompt("Ingrese URL de youtube para este video. (Formato Youtube 11 caracteres)", "i43tkaTXtwI");
 
 
-        axios.put(`http://localhost:3001/Videos/${evento.currentTarget.id}`, {
+        axios.put(`https://json-julioflix.onrender.com/Videos/${evento.currentTarget.id}`, {
 
 			TituloVideo: UsuarioDefineTitulo,
 			IdYoutube: UsuarioDefineIdYoutube,

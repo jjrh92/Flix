@@ -71,7 +71,7 @@ const Slider = (props) => {
     const [DatosVideos, setDatosVideos] = useState([])
     useEffect( () => {
 
-        fetch ("http://localhost:3001/Videos/")
+        fetch ("https://json-julioflix.onrender.com/Videos")
             .then (response => response.json())
             .then (data => setDatosVideos(data))
             .catch (err => alert ("No se ha podido conectar al JSON-SERVER: "+ err))

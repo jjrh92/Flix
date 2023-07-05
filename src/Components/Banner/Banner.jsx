@@ -85,7 +85,7 @@ const Banner = () => {
 
                 <ContenedorTextos>
                     <H1Hero>Dassault Mirage 50</H1Hero>
-                    <TextoHero>Proyecto de gestor de videos utilizando React. Las operaciones CRUD se pueden ver desde el boton "Nuevo Video". Se utiliza MaterialUI, JSON-Server, Axios, y uuid. </TextoHero>
+                    <TextoHero>Proyecto de gestor de videos utilizando React. Las operaciones CRUD se pueden ver desde el boton "Nuevo Video". Se utiliza MaterialUI, JSONServer, Axios, SweetAlert y uuid. </TextoHero>
                 </ContenedorTextos>
     
                 <ContenedorVideoHeader>
