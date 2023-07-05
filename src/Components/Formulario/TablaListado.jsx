@@ -5,6 +5,7 @@ import { Link } from "@mui/material";
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import AutoFixHighIcon from '@mui/icons-material/AutoFixHigh';
 import uuid from "react-uuid";
+import axios from "axios";
 
 const Tabla = styled ("table") ({
 
@@ -24,11 +25,6 @@ const TD = styled ("td") ({
 
 });
 
-const eliminarVideo = (className) => {
-
-    alert ("Se ha presionado el boto con el id ", className)
-
-};
 
 const TablaListado = () => {
     
@@ -41,6 +37,22 @@ const TablaListado = () => {
             .catch (err => alert ("No se ha podido conectar al JSON-SERVER: "+ err))
 
     }, []);
+
+    const EliminarVideo = evento => {
+
+        axios.delete(`http://localhost:3001/Videos/${evento.currentTarget.id}`)
+
+        .catch(error => {
+
+            console.error(error);
+
+        });
+
+        alert ("Video Eliminado ID: " +evento.currentTarget.id+ ". \nSe actualizara la pagina.");
+        window.location.reload();
+
+
+    };
     
     return (
 
@@ -58,7 +70,7 @@ const TablaListado = () => {
                     <TD>{props.id}</TD>
                     <TD>{props.TituloVideo}</TD>
                     <TD><Link title="Presiona para abrir en otra pestaña" sx={{color: ColoresJulioFlix.textos}} underline="none" href={`https://youtu.be/${props.IdYoutube}`} target="_blank" rel="noopener noreferrer">{props.IdYoutube}</Link></TD>
-                    <TD><DeleteForeverIcon/></TD>
+                    <TD onClick={EliminarVideo} id={props.id} title={"Eliminar el Video ID: "+ props.id+ "."}><DeleteForeverIcon/></TD>
                     <TD><AutoFixHighIcon/></TD>
                 </tr>
         })}
