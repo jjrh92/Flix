@@ -132,7 +132,7 @@ const Formulario = () => {
         </ContenedorBotones>
       </Form>
       <ContenedorTabla>
-        <H1Formulario>Listado de Videos</H1Formulario>
+        <H1Formulario>Video Playlist</H1Formulario>
         <TablaListado />
       </ContenedorTabla>
     </ContenedorFormulario>
