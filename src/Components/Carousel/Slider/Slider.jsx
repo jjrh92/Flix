@@ -49,6 +49,7 @@ const SubTexto = styled ("span") ({
     lineHeight: "21px",
     paddingLeft: "11px",
     userSelect: "none",
+    marginTop: "7px",
     
 });
 
@@ -82,8 +83,8 @@ const Slider = (props) => {
 
         <ContenedorCategoria>
             <ContenedorTextosCategoria>
-                <H1Categoria style={{color: "#DC1A28"}}>Categoria Custom</H1Categoria>
-                <SubTexto>Videos agregados por el autor.</SubTexto>
+                <H1Categoria style={{color: "#DC1A28"}}>Custom Category</H1Categoria>
+                <SubTexto>Added by the Administrator</SubTexto>
             </ContenedorTextosCategoria>
             <ContenedorVideos IdCategoria={props.IdCategoria}>
 
