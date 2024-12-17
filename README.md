@@ -2,28 +2,28 @@
 
 <div align="center">
 
-![Github Contributors](https://img.shields.io/github/contributors/jjrh92/JulioFlix)
-![Github Stars](https://img.shields.io/github/stars/jjrh92/JulioFlix)
-![Github Issues](https://img.shields.io/github/issues-raw/jjrh92/JulioFlix)
+![Github Contributors](https://img.shields.io/github/contributors/jjrh92/Flix)
+![Github Stars](https://img.shields.io/github/stars/jjrh92/Flix)
+![Github Issues](https://img.shields.io/github/issues-raw/jjrh92/Flix)
 
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/jjrh92/JulioFlix">
+  <a href="https://github.com/jjrh92/Flix">
     <img src="https://user-images.githubusercontent.com/48032098/245622309-4f1a3770-dd8c-4f30-b6dc-981ac962900d.png" alt="Logo" width="200" height="200">
   </a>
 
 <h3 align="center">Welcome - Bienvenid@</h3>
 
   <p align=center">
-    JulioFlix - Videoapp.
+    Flix - Videoapp.
     <br />
     <br />
-    <a href="https://julio-flix.vercel.app">View Demo - Ver Demo</a>
+    <a href="https://flix.julioreyes.dev/">View Demo - Ver Demo</a>
     ·
-    <a href="https://github.com/jjrh92/JulioFlix/issues">Report Bug - Reportar Bug</a>
+    <a href="https://github.com/jjrh92/Flix/issues">Report Bug - Reportar Bug</a>
     ·
-    <a href="https://github.com/jjrh92/JulioFlix/issues">Request Feature - Pedir Feature</a>
+    <a href="https://github.com/jjrh92/Flix/issues">Request Feature - Pedir Feature</a>
   </p>
 </div>
 
@@ -50,7 +50,7 @@ Install the project locally - Instalar el proyecto localmente.
 
 Clone the repo and execute npm install from your vscode
    ```sh
-   git clone https://github.com/jjrh92/JulioFlix.git
+   git clone https://github.com/jjrh92/Flix.git
    ```
 
 <!-- USAGE EXAMPLES -->
@@ -81,7 +81,7 @@ Contact <img src="https://media3.giphy.com/media/dA9zmG7BCtbauczAQY/giphy.gif" w
 
 [Via Github](https://github.com/jjrh92)
 
-[Via E-Mail](mailto:admin@jjrh92.dev)
+[Via E-Mail](mailto:contact@julioreyes.dev)
 
 [Via Telegram](https://t.me/jjrh92)
 
